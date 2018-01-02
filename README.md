@@ -38,7 +38,7 @@ Steps to install Symfony3 in new repositorie
         remote = origin
         merge = refs/heads/master
       ```
-  * Push the prokect
+  * Push the project
     ```
     git checkout -b develop
     git fetch origin develop
