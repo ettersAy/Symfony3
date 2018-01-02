@@ -7,6 +7,45 @@ application that you can use as the skeleton for your new applications.
 For details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
 
+Steps to install Symfony3 in new repositorie
+============================================
+
+  * Create a new repositorie in Github.
+  * Create a new Symfony project using composer:
+    ```
+      composer create-project symfony/framework-standard-edition symfony3
+      cd symfony3
+    ```
+  * Initialize your repository
+    ```
+      git init
+      git add .
+      git commit -m "Initial commit"
+    ``` 
+  * edite config
+      `git config -e `
+  * Add your url repository like `git@github.com:ettersAy/Symfony3.git` OR `https://github.com/ettersAy/Symfony3.git`
+      ```
+      [core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+      [remote "origin"]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        url = git@github.com:ettersAy/Symfony3.git 
+      [branch "master"]
+        remote = origin
+        merge = refs/heads/master
+      ```
+  * Push the prokect
+    ```
+    git checkout -b develop
+    git fetch origin develop
+    git push origin develop
+    ```
+  
+
 What's inside?
 --------------
 
