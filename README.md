@@ -37,6 +37,9 @@ Steps to install Symfony3 in new repositorie
       [branch "master"]
         remote = origin
         merge = refs/heads/master
+      [branch "develop"]
+        remote = origin
+        merge = refs/heads/develop
       ```
   * Push the project
     ```
