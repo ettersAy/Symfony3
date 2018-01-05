@@ -2,7 +2,7 @@
 
 ## GIT
 
-### Les étapes d'un début de sprint
+### Steps to start sprint
   * Créer une nouvelle branch, depuis le develop, pour le sprint en cours exemple (sprint24)
 ```
     git checkout develop
@@ -18,7 +18,7 @@
     git push --set-upstream origin newTicket
 ```
 ### Les étapes d'une mise en prod (MEP)
-merger les branch du ticket exemple (feature/nom-branche) avec la branch sprint24
+  * merger les branch du ticket exemple (feature/nom-branche) avec la branch sprint24
   ```
         git checkout sprint24
         git merge feature/nom-branche
@@ -26,14 +26,14 @@ merger les branch du ticket exemple (feature/nom-branche) avec la branch sprint2
         git commit -m"CHANGELOG.md"
         git push
   ```
-    merger (sprint24) avec develop
+  * merger (sprint24) avec develop
   ```
         git checkout develop
         git pull
         git merge sprint24
         git push
   ```
-    merge develop avec master
+  * merge develop avec master
  ```
         git checkout master
         git pull
@@ -42,7 +42,7 @@ merger les branch du ticket exemple (feature/nom-branche) avec la branch sprint2
         git tag 1.12.21
         git push --tags
 ```
-        
+### Some     
   * To reset all commit 
   ``` git reset --hard origin/master ```
   * To see/get the sha1 id of the commit you want to come back too
