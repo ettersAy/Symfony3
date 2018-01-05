@@ -2,6 +2,47 @@
 
 ## GIT
 
+### Les étapes d'un début de sprint
+  * Créer une nouvelle branch, depuis le develop, pour le sprint en cours exemple (sprint24)
+```
+    git checkout develop
+    git pull
+    git checkout -b sprint24
+    git push --set-upstream origin newBranch
+```
+  * Pour chaque ticket une branch
+```
+    git checkout sprint24
+    git pull
+    git checkout -b newTicket
+    git push --set-upstream origin newTicket
+```
+### Les étapes d'une mise en prod (MEP)
+merger les branch du ticket exemple (feature/nom-branche) avec la branch sprint24
+  ```
+        git checkout sprint24
+        git merge feature/nom-branche
+        git add CHANGELOG.md
+        git commit -m"CHANGELOG.md"
+        git push
+  ```
+    merger (sprint24) avec develop
+  ```
+        git checkout develop
+        git pull
+        git merge sprint24
+        git push
+  ```
+    merge develop avec master
+ ```
+        git checkout master
+        git pull
+        git merge develop
+        git push
+        git tag 1.12.21
+        git push --tags
+```
+        
   * To reset all commit 
   ``` git reset --hard origin/master ```
   * To see/get the sha1 id of the commit you want to come back too
@@ -9,6 +50,12 @@
   
   * To roll back to that commit
   ``` git reset --hard sha1_id ```
+  
+  * Delete a remote Git tag
+  ``` 
+  git tag -d 1.01.1
+  git push origin :refs/tags/1.01.1 
+```
 ## LINUX
 
 ### Generating a new SSH key
