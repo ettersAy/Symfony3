@@ -42,7 +42,7 @@
         git tag 1.12.21
         git push --tags
 ```
-### Some     
+### Some useful commands
   * To reset all commit 
   ``` git reset --hard origin/master ```
   * To see/get the sha1 id of the commit you want to come back too
