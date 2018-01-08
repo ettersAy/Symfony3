@@ -2,23 +2,23 @@
 
 ## GIT
 
-### Steps to start sprint
-  * Créer une nouvelle branch, depuis le develop, pour le sprint en cours exemple (sprint24)
+### Steps to start a new sprint
+  * Create a new branch (example: sprint24) from develop.
 ```
     git checkout develop
     git pull
     git checkout -b sprint24
-    git push --set-upstream origin newBranch
+    git push --set-upstream origin sprint24
 ```
-  * Pour chaque ticket une branch
+  * Create a branch, from sprint24 branch, for every ticket.
 ```
     git checkout sprint24
     git pull
-    git checkout -b newTicket
-    git push --set-upstream origin newTicket
+    git checkout -b feature/newTicket
+    git push --set-upstream origin feature/newTicket
 ```
-### Les étapes d'une mise en prod (MEP)
-  * merger les branch du ticket exemple (feature/nom-branche) avec la branch sprint24
+### Steps to put into prodection
+  * Merge all branch of sprint tickets with branch sprint24
   ```
         git checkout sprint24
         git merge feature/nom-branche
@@ -26,14 +26,14 @@
         git commit -m"CHANGELOG.md"
         git push
   ```
-  * merger (sprint24) avec develop
+  * Merger (sprint24) with develop
   ```
         git checkout develop
         git pull
         git merge sprint24
         git push
   ```
-  * merge develop avec master
+  * merge develop with master
  ```
         git checkout master
         git pull
