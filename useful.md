@@ -44,6 +44,16 @@
         git push --tags
 ```
 ### Some useful commands
+  * Initialize a new repository.
+```
+    echo "# NewRepos" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git remote add origin git@github.com:ettersAy/NewRepos.git
+    git push -u origin master
+```
+
   * To reset all commit 
 ``` 
         git reset --hard origin/master 
@@ -87,4 +97,29 @@
         OR 
         wget https://symfony.com/installer
 ```
-  
+    * Change the access permissions.
+``` 
+        sudo chmod 777 -R var
+```
+## Symfony
+
+### Create new project
+    * Download symfony.phar
+```
+    https://symfony.com/installer
+```
+    * Create a new project
+```
+    php symfony.phar new nameProject 3.3.2
+    cd nameProject
+    rm -rf var/*
+    sudo chmod 777 -R var
+    php bin/console assets:install
+    http://localhost/Symfony/web/app_dev.php/
+```
+## Docker
+    * The principal advantage
+```
+    The principal advantage of docker: is the fact that every team member work with the same environment, which is the copy of production environment.
+```
+    
