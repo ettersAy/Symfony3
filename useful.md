@@ -81,4 +81,10 @@
 ``` 
         ssh-add ~/.ssh/id_rsa 
 ```
+  * Download file.
+``` 
+        curl -LO 'https://symfony.com/installer' 
+        OR 
+        wget https://symfony.com/installer
+```
   
