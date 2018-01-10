@@ -73,6 +73,17 @@
         git tag -d 1.01.1
         git push origin :refs/tags/1.01.1 
 ```
+  
+  * Push removed files 
+``` 
+        git add . -A 
+        git commit -m "removed some files"
+        git push
+```  
+  * Push ignored file by `.gitignore`.
+``` 
+        git add -f var/sessions/.gitkeep
+```
 ## LINUX
 
 ### Generating a new SSH key
@@ -122,4 +133,9 @@
 ```
     The principal advantage of docker: is the fact that every team member work with the same environment, which is the copy of production environment.
 ```
-    
+## MySQL
+    * Connecting to the MySQL Server
+```
+        shell> mysql --host=localhost --user=myname --password mydb
+        shell> mysql -h localhost -u myname -p mydb
+```
