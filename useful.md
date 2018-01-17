@@ -1,5 +1,9 @@
 # Useful to know
-
+## Mysql
+    * Select last 6 months
+```
+    SELECT id, sent from CONTACT where sent > DATE_SUB(NOW(), INTERVAL 6 MONTH);
+```
 ## GIT
 
 ### Steps to start a new sprint
