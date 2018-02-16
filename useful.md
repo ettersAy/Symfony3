@@ -1,6 +1,6 @@
 # Useful to know
 ## Mysql
-    * Select last 6 months
+  * Select last 6 months
 ```
     SELECT id, sent from CONTACT where sent > DATE_SUB(NOW(), INTERVAL 6 MONTH);
 ```
@@ -116,10 +116,14 @@
 ``` 
         sudo chmod 777 -R var
 ```
+    * Redirect errors commande to log file
+``` 
+        find -name *test* 2> /tmp/out.log
+```
 ## Symfony
 
 ### Create new project
-    * Download symfony.phar
+  * Download symfony.phar
 ```
     https://symfony.com/installer
 ```
@@ -132,13 +136,54 @@
     php bin/console assets:install
     http://localhost/Symfony/web/app_dev.php/
 ```
+
+### Install Symfony 2
+  * Install intl extension
+``` 
+       yum list php*intl
+       sudo yum install php70w-intl.x86_64
+``` 
+  * Install pecl extension
+``` 
+       yum list *pecl*
+       sudo yum install php70w-pecl-apcu.x86_64
+``` 
+  * Install opcache extension 
+``` 
+       yum list *opcache*
+       sudo yum install php70w-opcache.x86_64
+``` 
+  * Config opcache extension : http://symfony.com/doc/2.7/performance.html
+``` 
+       sudo vi /etc/php-zts.d/opcache.ini 
+       ; maximum memory that OPcache can use to store compiled PHP files
+       opcache.memory_consumption=256
+       ; maximum number of files that can be stored in the cache
+       opcache.max_accelerated_files=20000
+       opcache.validate_timestamps=0
+
+       Sudo vi /etc/php.ini
+       ; maximum memory allocated to store the results
+       realpath_cache_size=4096K
+       ; save the results for 10 minutes (600 seconds)
+       realpath_cache_ttl=600
+
+       cd /usr/lib64/php/modules
+``` 
+  * Check systeme
+``` 
+       php app/check.php 
+       or 
+       http://localhost/symfony2.7/web/config.php
+       
+``` 
 ## Docker
-    * The principal advantage
+  * The principal advantage
 ```
     The principal advantage of docker: is the fact that every team member work with the same environment, which is the copy of production environment.
 ```
 ## MySQL
-    * Connecting to the MySQL Server
+  * Connecting to the MySQL Server
 ```
         shell> mysql --host=localhost --user=myname --password mydb
         shell> mysql -h localhost -u myname -p mydb
